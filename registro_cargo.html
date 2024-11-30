@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Cargo</title>
+  <style>
+    .boton-trabajadores {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .boton-trabajadores:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registro de Cargo</h1>
+  <form id="registroEmpleadoForm">
+    <input type="text" name="ID CARGO" placeholder="ID CARGO" required>
+    <input type="text" name="NOMBRE CARGO" placeholder="NOMBRE CARGO" required>
+    <input type="text" name="DESCRIPCION" placeholder="DESCRIPCION" required>
+    <input type="text" name="NIVEL" placeholder="NIVEL" required>
+
+    <button type="submit">Registrar</button>
+
+  </form>
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cargo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Cargo</h1>
+    <input type="text" id="buscador-Cargo" placeholder="Buscar por Cargo" oninput="filtrarPorCargo()">
+    <table>
+        <thead>
+            <tr>
+                <th>ID Cargo</th>
+                <th>Nombre Cargo</th>
+                <th>Descripcion</th>
+                <th>Nivel</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-cargo">
+            <!-- Aquí se insertarán las filas dinámicamente -->
+        </tbody>
+    </table>
+    <script src="app.js"></script>
+</body>
+</body> 
+</html>

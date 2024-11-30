@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Ausencia</title>
+  <style>
+    .boton-trabajadores {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .boton-trabajadores:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registro de Ausencia</h1>
+  <form id="registroEmpleadoForm">
+    <input type="text" name="ID ASISTENCIA" placeholder="ID ASISTENCIA" required>  
+    <input type="text" name="ID EMPLEADO" placeholder="ID EMPLEADO" required>
+    <input type="text" name="FECHA" placeholder="FECHA" required>
+    <input type="text" name="HORAS EXTRAS" placeholder="HORA EXTRAS" required>
+    <input type="text" name="TOTAL HORAS" placeholder="TOTAL HORAS" required>
+    <input type="text" name="HORA SALIDA" placeholder="HORA SALIDA" required>
+    <input type="text" name="TIPO AUSENCIA" placeholder="TIPO AUSENCIA" required>
+    <input type="text" name="OBSERVACIONES" placeholder="OBSERVACIONES" required>
+    <input type="text" name="DIAS TRABAJADOS" placeholder="DIAS TRABAJADOS" required>
+    <input type="text" name="DIAS NO TRABAJADOS" placeholder="DIAS NO TRABAJADOS" required>
+    <button type="submit">Registrar</button>
+
+  </form>
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Ausencia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Ausencia</h1>
+    <input type="text" id="buscador-Ausencia" placeholder="Buscar por Ausencia" oninput="filtrarPorAusencia()">
+    <table>
+        <thead>
+            <tr>
+                <th>ID Ausencia</th>
+                <th>ID Empleado</th>
+                <th>Fecha</th>
+                <th>Horas Extras</th>
+                <th>Total Horas</th>
+                <th>Hora Salida</th>
+                <th>Tipo Ausencia</th>
+                <th>Observaciones</th>
+                <th>Dias Trabajados</th>
+                <th>Dias No Trabajados</th>
+
+            </tr>
+        </thead>
+        <tbody id="tabla-ausencia">
+            <!-- Aquí se insertarán las filas dinámicamente -->
+        </tbody>
+    </table>
+    <script src="app.js"></script>
+</body>
+</body> 
+</html>

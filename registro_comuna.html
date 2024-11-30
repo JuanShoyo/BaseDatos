@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Comunas</title>
+  <style>
+    .boton-trabajadores {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .boton-trabajadores:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registro de Comunas</h1>
+  <form id="registroComunasForm">
+    <input type="text" name="ID COMUNA" placeholder="ID COMUNA" required>
+    <input type="text" name="NOMBRE COMUNA" placeholder="NOMBRE COMUNA" required>
+    <input type="text" name="REGION" placeholder="REGION" required>
+    <button type="submit">Registrar</button>
+
+  </form>
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Comunas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de comunas</h1>
+    <input type="text" id="buscador-comuna" placeholder="Buscar por comuna" oninput="filtrarPorComuna()">
+    <table>
+        <thead>
+            <tr>
+                <th>ID Comuna</th>
+                <th>Nombre comuna</th>
+                <th>Region</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-comuna">
+            <!-- Aquí se insertarán las filas dinámicamente -->
+        </tbody>
+    </table>
+    <script src="app.js"></script>
+</body>
+</body> 
+</html>

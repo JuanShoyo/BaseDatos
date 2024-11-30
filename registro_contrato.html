@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Contrato</title>
+  <style>
+    .boton-trabajadores {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .boton-trabajadores:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registro de Contrato</h1>
+  <form id="registroEmpleadoForm">
+    <input type="text" name="ID CONTRATO" placeholder="ID CONTRATO" required>
+    <input type="text" name="ID EMPLEADO" placeholder="ID EMPLEADO" required>
+    <input type="text" name="FECHA INGRESO" placeholder="FECHA INGRESO" required>
+    <input type="text" name="FECHA TERMINO" placeholder="FECHA TERMINO" required>
+    <input type="text" name="TIPO CONTRATO" placeholder="TIPO CONTRATO" required>
+    <input type="text" name="SUELDO BASE" placeholder="SUELDO BASE" required>
+    <button type="submit">Registrar</button>
+
+  </form>
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Contrato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Contrato</h1>
+    <input type="text" id="buscador-contrato" placeholder="Buscar por Contrato" oninput="filtrarPorContrato()">
+    <table>
+        <thead>
+            <tr>
+                <th>ID Contrato</th>
+                <th>ID Empleado</th>
+                <th>Fecha Ingreso</th>
+                <th>Fecha Termino</th>
+                <th>Tipo Contrato</th>
+                <th>Sueldo Base</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-contrato">
+            <!-- Aquí se insertarán las filas dinámicamente -->
+        </tbody>
+    </table>
+    <script src="app.js"></script>
+</body>
+</body> 
+</html>

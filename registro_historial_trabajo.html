@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Historial de Trabajo</title>
+  <style>
+    .boton-trabajadores {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .boton-trabajadores:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registro Historial de Trabajo</h1>
+  <form id="registroEmpleadoForm">
+    <input type="text" name="ID HISTORIAL" placeholder="ID HISTORIAL" required>
+    <input type="text" name="ID EMPLEADO" placeholder="ID EMPLEADO" required>
+    <input type="text" name="FECHA INICIO" placeholder="FECHA INICIO" required>
+    <input type="text" name="FECHA FIN" placeholder="FECHA FIN" required>
+    <input type="text" name="ID CARGO" placeholder="ID CARGO" required>
+    <input type="text" name="ID DEPARTAMENTO" placeholder="ID DEPARTAMENTO" required>
+    <button type="submit">Registrar</button>
+
+  </form>
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Historial de Trabajo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista Historial de Trabajo</h1>
+    <input type="text" id="buscador-Historial" placeholder="Buscar Historial" oninput="filtrarPorHistorial()">
+    <table>
+        <thead>
+            <tr>
+                <th>ID Historial</th>
+                <th>ID Empleado</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>ID Cargo</th>
+                <th>ID Departamento</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-historial-de-trabajo">
+            <!-- Aquí se insertarán las filas dinámicamente -->
+        </tbody>
+    </table>
+    <script src="app.js"></script>
+</body>
+</body> 
+</html>

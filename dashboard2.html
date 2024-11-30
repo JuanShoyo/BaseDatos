@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Arrayan</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <style>
+      /* Reset general */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Estilos generales */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Header */
+      header {
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      header .home-button {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      /* Layout principal */
+      .main-layout {
+        display: flex;
+        margin-top: 60px; /* Espacio para el header fijo */
+        flex: 1;
+      }
+
+      /* Barra lateral */
+      .sidebar {
+        width: 250px;
+        background-color: #f8f9fa;
+        height: 100vh;
+        position: fixed;
+        top: 60px; /* Debajo del header */
+        left: 0;
+        padding-top: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin: 10px 0;
+      }
+
+      .sidebar ul li a {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 18px;
+        padding: 10px 20px;
+        display: block;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+      }
+
+      .sidebar ul li a:hover {
+        background-color: #007bff;
+        color: white;
+      }
+
+      /* Contenido principal */
+      .content {
+        margin-left: 250px; /* Espacio para la barra lateral */
+        flex-grow: 1;
+        padding: 20px;
+      }
+
+      .content h1 {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="#" class="home-button">Home</a>
+    </header>
+
+    <!-- Layout principal -->
+    <div class="main-layout">
+      <!-- Barra lateral -->
+      <div class="sidebar">
+        <ul>
+          <li>
+            <a href="registro_de_empleados.html" onclick="loadPage(event, 'registro_de_empleados.html')">Registro Empleados</a>
+          </li>
+          <li>
+            <a href="registro_comuna.html" onclick="loadPage(event, 'registro_comuna.html')">Registro Comunas</a>
+          </li>
+          <li>
+            <a href="registro_afp.html" onclick="loadPage(event, 'registro_afp.html')">Registro AFP</a>
+          </li>
+          <li>
+            <a href="registro_ISAPRE.html" onclick="loadPage(event, 'registro_ISAPRE.html')">Registro Isapre</a>
+          </li>
+          <li>
+            <a href="registros_localidad.html" onclick="loadPage(event, 'registros_localidad.html')">Registro Localidad</a></li>
+          <li>
+            <a href="registro_historial_trabajo.html" onclick="loadPage(event, 'registro_historial_trabajo.html')">Registro H. Trabajo</a>
+          </li>
+          <li>
+            <a href="registro_contrato.html" onclick="loadPage(event, 'registro_contrato.html')">Registro Contratos</a>
+          </li>
+          <li>
+            <a href="registro_seguro_cesantia.html" onclick="loadPage(event, 'registro_seguro_cesantia.html')">Registro S. Cesantia</a>
+          </li>
+          <li>
+            <a href="registro_cargo.html" onclick="loadPage(event, 'registro_cargo.html')">Registro Cargo</a>
+          </li>
+          <li>
+            <a href="registro_licencia.html" onclick="loadPage(event, 'registro_licencia.html')">Registro Licencia</a>
+          </li>
+          <li>
+            <a href="registro_asistencia.html" onclick="loadPage(event, 'registro_asistencia.html')">Registro Asistencia</a>
+          </li>
+          <li>
+            <a href="registro_departamentos.html" onclick="loadPage(event, 'registro_departamentos.html')">Registro Departamentos</a>
+          </li>  
+          <li>
+            <a href="reporte_rut.html" onclick="loadPage(event, 'reporte_rut.html')">Reporte rut</a>
+          </li>
+                    
+          
+        </ul>
+      </div>
+
+      <!-- Contenido principal -->
+      <div class="content" id="content">
+        <h1>Bienvenido al Dashboard</h1>
+        <p>
+          Haz clic en los enlaces de la barra lateral para cargar los contenidos.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function loadPage(event, url) {
+        event.preventDefault(); // Evita que el navegador siga el enlace
+
+        // Obtiene el contenedor de contenido
+        const contentDiv = document.getElementById("content");
+
+        // Muestra un cargador (opcional)
+        contentDiv.innerHTML = "<p>Cargando contenido...</p>";
+
+        // Carga el contenido de la página
+        fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Error al cargar la página");
+            }
+            return response.text();
+          })
+          .then((html) => {
+            contentDiv.innerHTML = html;
+          })
+          .catch((error) => {
+            contentDiv.innerHTML = `<p>Error al cargar el contenido: ${error.message}</p>`;
+          });
+      }
+    </script>
+  </body>
+</html>

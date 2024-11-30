@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Licencia</title>
+  <style>
+    .boton-trabajadores {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .boton-trabajadores:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registro de Licencia</h1>
+  <form id="registroEmpleadoForm">
+    <input type="text" name="ID LICENCIA" placeholder="ID LICENCIA" required>  
+    <input type="text" name="FECHA INICIO" placeholder="FECHA INICIO" required>
+    <input type="text" name="FECHA TERMINO" placeholder="FECHA TERMINO" required>
+    <input type="text" name="MOTIVO" placeholder="MOTIVO" required>
+    <input type="text" name="ID EMPLEADO" placeholder="ID EMPLEADO" required>
+    <button type="submit">Registrar</button>
+
+  </form>
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Licencia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Licencia</h1>
+    <input type="text" id="buscador-Licencia" placeholder="Buscar por Licencia" oninput="filtrarPorLicencia()">
+    <table>
+        <thead>
+            <tr>
+                <th>ID Licencia</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Termino</th>
+                <th>Motivo</th>
+                <th>ID Empleado</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-licencia-medica">
+            <!-- Aquí se insertarán las filas dinámicamente -->
+        </tbody>
+    </table>
+    <script src="app.js"></script>
+</body>
+</body> 
+</html>

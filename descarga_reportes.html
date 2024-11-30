@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descargar Reportes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Descargar Reportes</h2>
+
+    <div class="mb-4">
+      <label for="reportType" class="form-label">Seleccione Tipo de Reporte:</label>
+      <select id="reportType" class="form-select">
+        <option value="">Todos</option>
+        <option value="contratos_activos">Contratos Activos</option>
+        <option value="historial_laboral">Historial Laboral</option>
+        <option value="liquidaciones">Liquidaciones</option>
+        <option value="asistencia">Asistencia</option>
+        <option value="afp">AFP</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary mb-3" id="loadReports">Cargar Reportes</button>
+
+    <div id="reportList" class="mt-3">
+      <!-- Lista de reportes cargados dinámicamente -->
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loadReports').addEventListener('click', async function() {
+      const reportType = document.getElementById('reportType').value;
+      const queryString = reportType ? `?report_type=${reportType}` : '';
+      const response = await fetch(`http://localhost:8000/api/reports/${queryString}`);
+      const reports = await response.json();
+
+      const reportList = document.getElementById('reportList');
+      reportList.innerHTML = '';
+
+      if (reports.length === 0) {
+        reportList.innerHTML = '<p class="text-danger">No se encontraron reportes.</p>';
+        return;
+      }
+
+      const ul = document.createElement('ul');
+      ul.classList.add('list-group');
+
+      reports.forEach(report => {
+        const li = document.createElement('li');
+        li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+        li.innerHTML = `
+          ${report.report_type.replace('_', ' ').toUpperCase()} - ${new Date(report.generated_date).toLocaleDateString()}
+          <a href="${report.file}" download class="btn btn-success btn-sm">Descargar</a>
+        `;
+        ul.appendChild(li);
+      });
+
+      reportList.appendChild(ul);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Empleados</title>
+    <style>
+      .boton-trabajadores {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .boton-trabajadores:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registro de Empleados</h1>
+    <form id="registroEmpleadoForm">
+      <input type="text" name="ID_USUARIO" placeholder="ID_USUARIO" required />
+      <input type="text" name="NOMBRE" placeholder="NOMBRE" required />
+      <input type="text" name="APELLIDO" placeholder="APELLIDO" required />
+      <input type="text" name="RUT" placeholder="RUT" required />
+      <input
+        type="text"
+        name="FECHA DE NACIMIENTO"
+        placeholder="FECHA DE NACIMIENTO"
+        required
+      />
+      <input type="text" name="TELEFONO" placeholder="TELEFONO" required />
+    </form>
+    <form>
+      <input
+        type="text"
+        name="CORREO ELECTRONICO"
+        placeholder="CORREO ELECTRONICO"
+        required
+      />
+      <input type="text" name="SALARIO" placeholder="SALARIO" required />
+      <input type="text" name="ID_AFP" placeholder="ID_AFP" required />
+      <input type="text" name="ID_CARGO" placeholder="ID_CARGO" required />
+      <input
+        type="text"
+        name="ID_DEPARTAMENTO"
+        placeholder="ID_DEPARTAMENTO"
+        required
+      />
+      <input type="text" name="ID_ISAPRE" placeholder="ID_ISAPRE" required />
+    </form>
+    <form>
+      <input
+        type="text"
+        name="ID_LOCALIDAD"
+        placeholder="ID_LOCALIDAD"
+        required
+      />
+      <button type="submit">Registrar</button>
+    </form>
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Lista de Empleados</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+        th,
+        td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+        th {
+          background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+        tr:hover {
+          background-color: #f1f1f1;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Lista de Empleados</h1>
+      <input
+        type="text"
+        id="buscador-rut"
+        placeholder="Buscar por RUT"
+        oninput="filtrarPorRUT()"
+      />
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>RUT</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Teléfono</th>
+            <th>Correo Electrónico</th>
+            <th>Salario</th>
+            <th>ID AFP</th>
+            <th>ID Cargo</th>
+            <th>ID Departamento</th>
+            <th>ID Isapre</th>
+            <th>ID Localidad</th>
+          </tr>
+        </thead>
+        <tbody id="empleadosTabla">
+          <!-- Aquí se insertarán las filas dinámicamente -->
+        </tbody>
+      </table>
+    <script src="api.js"></script>
+    </body>
+  </body>
+</html>
